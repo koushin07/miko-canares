@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        boska: ['"boska"', 'serif'], // Add your custom font here
         montserrat: ['Montserrat', 'sans-serif'], // Add Montserrat as a custom font
         smooch: ['Smooch Sans', 'serif'], // Add Smooch as a custom font
         dm: ['DM Mono', 'monospace'],

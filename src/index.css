@@ -105,3 +105,9 @@ img {
 .animate-wave {
   animation: wave 7s linear infinite;
 }
+
+@font-face {
+  font-family: boska;
+  font-weight: 200;
+  src: url("../public/font/Boska-Variable.ttf");
+}

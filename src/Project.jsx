@@ -76,8 +76,9 @@ const Project = () => {
       onMouseMove={handleMouseMove}
     >
       <div
-        className="w-fit p-8 relative z-0 h-[calc(100vh-300px)] overflow-y-auto"
+        className="w-fit p-8 relative z-0 h-[calc(100vh-300px)] overflow-y-auto "
         style={{
+
           scrollbarWidth: "none", // Firefox
           msOverflowStyle: "none", // IE/Edge
           WebkitOverflowScrolling: "touch", // Smooth scrolling on iOS

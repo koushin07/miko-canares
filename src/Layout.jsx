@@ -5,7 +5,6 @@ import anime from "animejs";
 import Loading from "./Loading";
 
 const Layout = () => {
-
   const grained = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const line1Ref = useRef(null);
@@ -19,7 +18,6 @@ const Layout = () => {
     { num: "02", text: "About", link: "/about" },
     { num: "03", text: "Projects", link: "projects" },
     { num: "05", text: "Skills", link: "skills" },
-
   ];
   useEffect(() => {
     anime({
@@ -56,13 +54,12 @@ const Layout = () => {
       );
   }, []);
   useEffect(() => {
-
     anime(
       {
         targets: ".child *",
         opacity: [0, 1],
         translateX: [-100, 0],
-        easing: 'easeOutCubic',
+        easing: "easeOutCubic",
         duration: 2000,
         // delay: anime.stagger(200, {
         //   from: 'first',
@@ -238,14 +235,9 @@ const Layout = () => {
           </header>
 
           {/* Main Content Area */}
-          <main className="relative -translate-y-10 ">
-            <div className="w-full">
-              {/* Updated to allow scrolling */}
-              <div
-                className="
-                font-thin font-roboto  subpixel-antialiased child  text-stone-300"
-
-              >
+          <main className="relative -translate-y-10 h-screen overflow-hidden">
+            <div className="w-full h-full">
+              <div className="font-thin font-roboto subpixel-antialiased child text-stone-300 h-full">
                 <Outlet />
               </div>
             </div>
@@ -262,17 +254,17 @@ const Layout = () => {
               {navItems.map((item) => (
                 <li key={item.num} className="group text-right ">
                   <NavLink
-                  to={item.link}
-                  className={({ isActive }) => `
-                    navigation flex items-center justify-end space-x-4
+                    to={item.link}
+                    className={({ isActive }) => `
+                    navigation ppercase font-mono flex items-center justify-end space-x-4
                     animated-text transition-colors duration-300
-                    ${isActive ? 'text-white' : 'hover:text-white'}
+                    ${isActive ? "text-stone-400" : "hover:text-white"}
                   `}
                   >
-                    <span className="font-mono text-sm opacity-60 group-hover:opacity-100 transition-opacity">
+                    <span className=" text-sm opacity-60 group-hover:opacity-100 transition-opacity">
                       {item.num}
                     </span>
-                    <span className="text-base font-light tracking-wider">
+                    <span className="text-base opacity-60 font-medium tracking-wider">
                       {item.text}
                     </span>
                   </NavLink>

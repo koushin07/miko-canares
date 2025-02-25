@@ -43,7 +43,7 @@ const Project = () => {
       desc: "Send personalized emails to recipients at a future date. Share memories, goals, and messages with your future self or loved ones. Keep the magic of surprise alive",
       image: "/time-cap.png",
       url: "https://timecaps.onrender.com",
-      tech: ["Angular", "PrimeNG", "TailwindCSS", "ASP.NET"],
+      tech: ["Angular", "PrimeNG", "TailwindCSS", "ASP.NET", "MailKit", "Hangfire"],
     },
     // {
     //   id: 5,

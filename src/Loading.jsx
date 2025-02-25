@@ -1,5 +1,5 @@
 import anime from "animejs";
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 
 
 const Loading = () => {

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, ScrollRestoration, Router } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -7,7 +7,6 @@ import Layout from "./Layout.jsx";
 import { About } from "./About.jsx";
 import Skills from "./Skills.jsx";
 import Project from "./Project.jsx";
-import React from "react";
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
 

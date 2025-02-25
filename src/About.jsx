@@ -1,7 +1,27 @@
 import { ArrowRight } from "lucide-react";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 
 export const About = () => {
+  const experiences = [
+    {
+      year: "2023",
+      title: "Analyst II ERP Product Application",
+      description:
+        "Testing terminal applications within the different servers. and Developing automated test ",
+    },
+    {
+      year: "2023",
+      title: "System and Infrastructure Engineer - Intern",
+      description:
+        "Set up servers, installed software, and resolved issues to ensure reliability",
+    },
+    {
+      year: "2022",
+      title: "Freelance - Web Developer",
+      description:
+        "Building Website for clients business and projects",
+    },
+  ];
   return (
     <div
       className="p-8 pt-10 font-roboto h-[calc(100vh-300px)] overflow-y-auto"
@@ -37,20 +57,7 @@ export const About = () => {
             Journey Highlights
           </h2>
           <div className="space-y-6">
-            {[
-              {
-                year: "2023",
-                title: "Analyst II ERP Product Application",
-                description:
-                  "Testing terminal applications within the different servers. and Developing automated test ",
-              },
-              {
-                year: "2023",
-                title: "System and Infrastructure Engineer - Intern",
-                description:
-                  "Set up servers, installed software, and resolved issues to ensure reliability",
-              },
-            ].map((milestone, index) => (
+            {experiences.map((milestone, index) => (
               <div key={index} className="flex gap-6 items-start">
                 <div className="w-36 flex-shrink-0 text-gray-500 font-medium">
                   {milestone.year}

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import React from "react";
 import { NavLink, Outlet, useLocation } from "react-router";
 import anime from "animejs";
 import Loading from "./Loading";
@@ -127,6 +126,69 @@ const Layout = () => {
   const handleMobileNavigation = () => {
     setIsActive(!isActive);
   };
+  useEffect(() => {
+    anime
+      .timeline({
+        easing: "easeInOutQuad",
+        loop: true,
+      })
+      // First phase: Show first text, then move to second text
+      .add({
+        targets: ".animation-effect",
+        translateY: [0, "-33.33%"], // Move up by 1/3 of the container
+        duration: 1200,
+        easing: "easeInOutQuad",
+        changeBegin: () => {
+          anime({
+            targets: ".letter-1",
+            translateY: ["0", "-30%"],
+            duration: 800,
+            easing: "easeInOutQuad",
+            delay: anime.stagger(120),
+          })
+          anime({
+            targets: ".letter-2",
+            translateY: ['50%', '0'],
+            duration: 800,
+            easing: "easeInOutQuad",
+            delay: anime.stagger(120),
+          })
+        }
+      })
+      // Pause briefly on second text
+      .add({
+        duration: 1000,
+      })
+      // Second phase: Show second text, move to third text
+      .add({
+        targets: ".animation-effect",
+        translateY: ["-33.33%", "-66.66%"], // Move up by another 1/3
+        duration: 1200,
+        easing: "easeInOutQuad",
+        changeBegin: () => {
+          anime({
+            targets: ".letter-2",
+            translateY: ['0', '-30%'],
+            duration: 800,
+            easing: "easeInOutQuad",
+            delay: anime.stagger(120),
+          })
+          anime({
+            targets: ".letter-3",
+            translateY: ['50%', '0'],
+            duration: 800,
+            easing: "easeInOutQuad",
+            delay: anime.stagger(120),
+          })
+        }
+      })
+      // Pause briefly on third text
+      .add({
+        duration: 1000,
+      });
+    // Reset to first text (with animation)
+
+  }, []);
 
   useEffect(() => {
     const navAnimation = anime.timeline({
@@ -220,6 +282,38 @@ const Layout = () => {
       >
         <div className=" relative pt-10 lg:pt-0">
           <header className="font-lato px-10 to-10 pt-16  text-slate-300 w-1/4">
+            <div className="hover-effect  text-lg md:text-3xl font-bold">
+              <div
+                className="flex flex-col overflow-hidden h-7 md:h-9
+                 w-48 "
+              >
+                <div className=" animation-effect">
+                  <div>
+                    {"Developer".split("").map((char, index) => (
+                      <span key={index} className=" letter-1 inline-block">
+                        {char}
+                      </span>
+                    ))}
+                  </div>
+                  <div>
+                    {" "}
+                    {"Designer".split("").map((char, index) => (
+                      <span key={index} className="letter-2 inline-block">
+                        {char}
+                      </span>
+                    ))}
+                  </div>
+                  <div>
+                    {" "}
+                    {"Developer".split("").map((char, index) => (
+                      <span key={index} className="letter-3 inline-block">
+                        {char}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
             <div className="relative group w-full h-full">
               <div className="overflow-hidden h-24 lg:h-32 w-fit">
                 <header className="miko relative  tracking-wider text-7xl  lg:text-9xl pb-2">

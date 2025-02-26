@@ -142,22 +142,22 @@ const Layout = () => {
           anime({
             targets: ".letter-1",
             translateY: ["0", "-30%"],
-            duration: 800,
+            duration: 1200,
             easing: "easeInOutQuad",
             delay: anime.stagger(120),
-          })
+          });
           anime({
             targets: ".letter-2",
-            translateY: ['50%', '0'],
-            duration: 800,
+            translateY: ["50%", "0"],
+            duration: 1200,
             easing: "easeInOutQuad",
             delay: anime.stagger(120),
-          })
-        }
+          });
+        },
       })
       // Pause briefly on second text
       .add({
-        duration: 1000,
+        duration: 3000,
       })
       // Second phase: Show second text, move to third text
       .add({
@@ -168,26 +168,25 @@ const Layout = () => {
         changeBegin: () => {
           anime({
             targets: ".letter-2",
-            translateY: ['0', '-30%'],
-            duration: 800,
+            translateY: ["0", "-30%"],
+            duration: 1200,
             easing: "easeInOutQuad",
             delay: anime.stagger(120),
-          })
+          });
           anime({
             targets: ".letter-3",
-            translateY: ['50%', '0'],
-            duration: 800,
+            translateY: ["50%", "0"],
+            duration: 1200,
             easing: "easeInOutQuad",
             delay: anime.stagger(120),
-          })
-        }
+          });
+        },
       })
       // Pause briefly on third text
       .add({
-        duration: 1000,
+        duration: 3000,
       });
     // Reset to first text (with animation)
-
   }, []);
 
   useEffect(() => {
@@ -282,14 +281,14 @@ const Layout = () => {
       >
         <div className=" relative pt-10 lg:pt-0">
           <header className="font-lato px-10 to-10 pt-16  text-slate-300 w-1/4">
-            <div className="hover-effect  text-lg md:text-3xl font-bold">
+            <div className="hover-effect  text-sm md:text-lg font-bold">
               <div
-                className="flex flex-col overflow-hidden h-7 md:h-9
+                className="flex flex-col  font-light italic overflow-hidden h-5 md:h-7
                  w-48 "
               >
                 <div className=" animation-effect">
                   <div>
-                    {"Developer".split("").map((char, index) => (
+                    {"Designer".split("").map((char, index) => (
                       <span key={index} className=" letter-1 inline-block">
                         {char}
                       </span>
@@ -297,7 +296,7 @@ const Layout = () => {
                   </div>
                   <div>
                     {" "}
-                    {"Designer".split("").map((char, index) => (
+                    {"Developer".split("").map((char, index) => (
                       <span key={index} className="letter-2 inline-block">
                         {char}
                       </span>
@@ -305,7 +304,7 @@ const Layout = () => {
                   </div>
                   <div>
                     {" "}
-                    {"Developer".split("").map((char, index) => (
+                    {"Designer".split("").map((char, index) => (
                       <span key={index} className="letter-3 inline-block">
                         {char}
                       </span>
@@ -316,14 +315,14 @@ const Layout = () => {
             </div>{" "}
             <div className="relative group w-full h-full">
               <div className="overflow-hidden h-24 lg:h-32 w-fit">
-                <header className="miko relative  tracking-wider text-7xl  lg:text-9xl pb-2">
+                <h1 className="miko relative  tracking-wider text-7xl  lg:text-9xl pb-2">
                   Miko
-                </header>
+                </h1>
               </div>
               <div className="overflow-hidden h-24 lg:h-32 w-fit">
-                <header className="canares relative  tracking-wider text-7xl lg:text-9xl pb-2">
+                <h1 className="canares relative  tracking-wider text-7xl lg:text-9xl pb-2">
                   Canares
-                </header>
+                </h1>
               </div>
             </div>
           </header>
